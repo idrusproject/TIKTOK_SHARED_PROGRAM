@@ -11,8 +11,8 @@ unsigned long currentTime;
 unsigned long cloopTime;
 float volume_per_pulse = 0.0;
 
-void flow () // Interrupt function
-{
+// Interrupt function
+void flow (){
   flow_frequency++;
 }
 
@@ -36,8 +36,7 @@ void loop() {
 
   currentTime = millis();
   // Every second, calculate and print litres/hour
-  if (currentTime >= (cloopTime + 1000))
-  {
+  if (currentTime >= (cloopTime + 1000)){
     cloopTime = currentTime; // Updates cloopTime
     if (flow_frequency != 0){
       // Pulse frequency (Hz) = 7.5Q, Q is flow rate in L/min.
